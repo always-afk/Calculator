@@ -88,7 +88,7 @@ namespace Calculator
             textBox_Previous.Text = null;
         }
 
-        private void button_point_Click(object sender, EventArgs e)
+        private void button_Point_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBox_Current.Text))
             {
@@ -98,20 +98,69 @@ namespace Calculator
             {
                 textBox_Current.Text += ".";
             }
-        }
-
-        private void button_Add_Click(object sender, EventArgs e)
-        {
-            textBox_Operation.Text = "+";
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
-        }
+        }       
 
         private void button_RemoveAll_Click(object sender, EventArgs e)
         {
             textBox_Current.Text = null;
             textBox_Operation.Text = null;
             textBox_Previous.Text = null;
+        }
+
+        private void button_Add_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_Add.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
+        }
+
+        private void button_Minus_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_Minus.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
+        }
+
+        private void button_Multiply_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_Multiply.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
+        }
+
+        private void button_Split_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_Split.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
+        }
+
+        private void button_Sqrt_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_Sqrt.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
+        }
+
+        private void button_Power2_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_Power2.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
+        }
+
+        private void button_OneSplitByX_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_OneSplitByX.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
+        }
+
+        private void button_Percent_Click(object sender, EventArgs e)
+        {
+            textBox_Operation.Text = button_Percent.Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
         }
     }
 }

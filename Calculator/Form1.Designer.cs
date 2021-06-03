@@ -39,7 +39,7 @@ namespace Calculator
             this.button_8 = new System.Windows.Forms.Button();
             this.button_9 = new System.Windows.Forms.Button();
             this.button_0 = new System.Windows.Forms.Button();
-            this.button_point = new System.Windows.Forms.Button();
+            this.button_Point = new System.Windows.Forms.Button();
             this.button_ChangeSigh = new System.Windows.Forms.Button();
             this.button_Result = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
@@ -159,15 +159,15 @@ namespace Calculator
             this.button_0.UseVisualStyleBackColor = true;
             this.button_0.Click += new System.EventHandler(this.button_0_Click);
             // 
-            // button_point
+            // button_Point
             // 
-            this.button_point.Location = new System.Drawing.Point(170, 234);
-            this.button_point.Name = "button_point";
-            this.button_point.Size = new System.Drawing.Size(75, 23);
-            this.button_point.TabIndex = 10;
-            this.button_point.Text = ",";
-            this.button_point.UseVisualStyleBackColor = true;
-            this.button_point.Click += new System.EventHandler(this.button_point_Click);
+            this.button_Point.Location = new System.Drawing.Point(170, 234);
+            this.button_Point.Name = "button_Point";
+            this.button_Point.Size = new System.Drawing.Size(75, 23);
+            this.button_Point.TabIndex = 10;
+            this.button_Point.Text = ",";
+            this.button_Point.UseVisualStyleBackColor = true;
+            this.button_Point.Click += new System.EventHandler(this.button_Point_Click);
             // 
             // button_ChangeSigh
             // 
@@ -205,6 +205,7 @@ namespace Calculator
             this.button_Minus.TabIndex = 14;
             this.button_Minus.Text = "-";
             this.button_Minus.UseVisualStyleBackColor = true;
+            this.button_Minus.Click += new System.EventHandler(this.button_Minus_Click);
             // 
             // button_Multiply
             // 
@@ -214,6 +215,7 @@ namespace Calculator
             this.button_Multiply.TabIndex = 15;
             this.button_Multiply.Text = "*";
             this.button_Multiply.UseVisualStyleBackColor = true;
+            this.button_Multiply.Click += new System.EventHandler(this.button_Multiply_Click);
             // 
             // button_Split
             // 
@@ -223,6 +225,7 @@ namespace Calculator
             this.button_Split.TabIndex = 16;
             this.button_Split.Text = "/";
             this.button_Split.UseVisualStyleBackColor = true;
+            this.button_Split.Click += new System.EventHandler(this.button_Split_Click);
             // 
             // button_Sqrt
             // 
@@ -232,6 +235,7 @@ namespace Calculator
             this.button_Sqrt.TabIndex = 17;
             this.button_Sqrt.Text = "sqrt(x)";
             this.button_Sqrt.UseVisualStyleBackColor = true;
+            this.button_Sqrt.Click += new System.EventHandler(this.button_Sqrt_Click);
             // 
             // button_Power2
             // 
@@ -241,6 +245,7 @@ namespace Calculator
             this.button_Power2.TabIndex = 18;
             this.button_Power2.Text = "x^2";
             this.button_Power2.UseVisualStyleBackColor = true;
+            this.button_Power2.Click += new System.EventHandler(this.button_Power2_Click);
             // 
             // button_OneSplitByX
             // 
@@ -250,6 +255,7 @@ namespace Calculator
             this.button_OneSplitByX.TabIndex = 19;
             this.button_OneSplitByX.Text = "1/x";
             this.button_OneSplitByX.UseVisualStyleBackColor = true;
+            this.button_OneSplitByX.Click += new System.EventHandler(this.button_OneSplitByX_Click);
             // 
             // button_RemoveOneNum
             // 
@@ -263,21 +269,21 @@ namespace Calculator
             // 
             // button_RemoveOneElem
             // 
-            this.button_RemoveOneElem.Location = new System.Drawing.Point(170, 89);
+            this.button_RemoveOneElem.Location = new System.Drawing.Point(89, 89);
             this.button_RemoveOneElem.Name = "button_RemoveOneElem";
             this.button_RemoveOneElem.Size = new System.Drawing.Size(75, 23);
             this.button_RemoveOneElem.TabIndex = 21;
-            this.button_RemoveOneElem.Text = "C";
+            this.button_RemoveOneElem.Text = "CE";
             this.button_RemoveOneElem.UseVisualStyleBackColor = true;
             this.button_RemoveOneElem.Click += new System.EventHandler(this.button_RemoveOneElem_Click);
             // 
             // button_RemoveAll
             // 
-            this.button_RemoveAll.Location = new System.Drawing.Point(89, 89);
+            this.button_RemoveAll.Location = new System.Drawing.Point(170, 89);
             this.button_RemoveAll.Name = "button_RemoveAll";
             this.button_RemoveAll.Size = new System.Drawing.Size(75, 23);
             this.button_RemoveAll.TabIndex = 22;
-            this.button_RemoveAll.Text = "CE";
+            this.button_RemoveAll.Text = "C";
             this.button_RemoveAll.UseVisualStyleBackColor = true;
             this.button_RemoveAll.Click += new System.EventHandler(this.button_RemoveAll_Click);
             // 
@@ -289,6 +295,7 @@ namespace Calculator
             this.button_Percent.TabIndex = 23;
             this.button_Percent.Text = "%";
             this.button_Percent.UseVisualStyleBackColor = true;
+            this.button_Percent.Click += new System.EventHandler(this.button_Percent_Click);
             // 
             // textBox_Current
             // 
@@ -321,7 +328,7 @@ namespace Calculator
             // listBox_Results
             // 
             this.listBox_Results.FormattingEnabled = true;
-            this.listBox_Results.Location = new System.Drawing.Point(332, 6);
+            this.listBox_Results.Location = new System.Drawing.Point(332, 11);
             this.listBox_Results.Name = "listBox_Results";
             this.listBox_Results.Size = new System.Drawing.Size(210, 251);
             this.listBox_Results.TabIndex = 27;
@@ -348,7 +355,7 @@ namespace Calculator
             this.Controls.Add(this.button_Add);
             this.Controls.Add(this.button_Result);
             this.Controls.Add(this.button_ChangeSigh);
-            this.Controls.Add(this.button_point);
+            this.Controls.Add(this.button_Point);
             this.Controls.Add(this.button_0);
             this.Controls.Add(this.button_9);
             this.Controls.Add(this.button_8);
@@ -378,7 +385,7 @@ namespace Calculator
         private System.Windows.Forms.Button button_8;
         private System.Windows.Forms.Button button_9;
         private System.Windows.Forms.Button button_0;
-        private System.Windows.Forms.Button button_point;
+        private System.Windows.Forms.Button button_Point;
         private System.Windows.Forms.Button button_ChangeSigh;
         private System.Windows.Forms.Button button_Result;
         private System.Windows.Forms.Button button_Add;
