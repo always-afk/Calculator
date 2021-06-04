@@ -1,7 +1,7 @@
 ﻿
 namespace Calculator
 {
-    partial class Form1
+    partial class CalculatorForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -186,6 +186,7 @@ namespace Calculator
             this.button_Result.TabIndex = 12;
             this.button_Result.Text = "=";
             this.button_Result.UseVisualStyleBackColor = true;
+            this.button_Result.Click += new System.EventHandler(this.button_Result_Click);
             // 
             // button_Add
             // 
@@ -332,8 +333,9 @@ namespace Calculator
             this.listBox_Results.Name = "listBox_Results";
             this.listBox_Results.Size = new System.Drawing.Size(210, 251);
             this.listBox_Results.TabIndex = 27;
+            this.listBox_Results.SelectedIndexChanged += new System.EventHandler(this.listBox_Results_SelectedIndexChanged);
             // 
-            // Form1
+            // CalculatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -366,8 +368,9 @@ namespace Calculator
             this.Controls.Add(this.button_3);
             this.Controls.Add(this.button_2);
             this.Controls.Add(this.button_1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "CalculatorForm";
+            this.Text = "Calculator";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CalculatorForm_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
