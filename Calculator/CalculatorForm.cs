@@ -229,7 +229,63 @@ namespace Calculator
 
         private void CalculatorForm_KeyPress(object sender, KeyPressEventArgs e)
         {
+            switch (e.KeyChar)
+            {
+                case '0':
+                    Button_0_Click(sender, e);
+                    break;
+                case '1':
+                    Button_1_Click(sender, e);
+                    break;
+                case '2':
+                    Button_2_Click(sender, e);
+                    break;
+                case '3':
+                    Button_3_Click(sender, e);
+                    break;
+                case '4':
+                    Button_4_Click(sender, e);
+                    break;
+                case '5':
+                    Button_5_Click(sender, e);
+                    break;
+                case '6':
+                    Button_6_Click(sender, e);
+                    break;
+                case '7':
+                    Button_7_Click(sender, e);
+                    break;
+                case '8':
+                    Button_8_Click(sender, e);
+                    break;
+                case '9':
+                    Button_9_Click(sender, e);
+                    break;
+                case '+':
+                    Button_Add_Click(sender, e);
+                    break;
+                case '-':
+                    Button_Minus_Click(sender, e);
+                    break;
+                case '*':
+                    Button_Multiply_Click(sender, e);
+                    break;
+                case '/':
+                    Button_Split_Click(sender, e);
+                    break;
+            }
+        }
 
+        private void Button_ChangeSigh_Click(object sender, EventArgs e)
+        {
+            if (textBox_Current.Text.First().Equals('-'))
+            {
+                textBox_Current.Text = textBox_Current.Text.Trim('-');
+            }
+            else
+            {
+                textBox_Current.Text = "-" + textBox_Current.Text;
+            }
         }
     }
 }

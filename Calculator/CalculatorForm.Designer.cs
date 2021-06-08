@@ -177,6 +177,7 @@ namespace Calculator
             this.button_ChangeSigh.TabIndex = 11;
             this.button_ChangeSigh.Text = "+/-";
             this.button_ChangeSigh.UseVisualStyleBackColor = true;
+            this.button_ChangeSigh.Click += new System.EventHandler(this.Button_ChangeSigh_Click);
             // 
             // button_Result
             // 
@@ -337,8 +338,7 @@ namespace Calculator
             // 
             // CalculatorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(551, 266);
             this.Controls.Add(this.listBox_Results);
             this.Controls.Add(this.textBox_Previous);
@@ -368,6 +368,7 @@ namespace Calculator
             this.Controls.Add(this.button_3);
             this.Controls.Add(this.button_2);
             this.Controls.Add(this.button_1);
+            this.KeyPreview = true;
             this.Name = "CalculatorForm";
             this.Text = "Calculator";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CalculatorForm_KeyPress);
