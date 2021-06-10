@@ -109,6 +109,10 @@ namespace Calculator
 
         private void Button_Add_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_Add.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -116,6 +120,10 @@ namespace Calculator
 
         private void Button_Minus_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_Minus.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -123,6 +131,10 @@ namespace Calculator
 
         private void Button_Multiply_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_Multiply.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -130,6 +142,10 @@ namespace Calculator
 
         private void Button_Split_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_Split.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -137,6 +153,10 @@ namespace Calculator
 
         private void Button_Sqrt_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_Sqrt.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -145,6 +165,10 @@ namespace Calculator
 
         private void Button_Power2_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_Power2.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -153,6 +177,10 @@ namespace Calculator
 
         private void Button_OneSplitByX_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_OneSplitByX.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -161,6 +189,10 @@ namespace Calculator
 
         private void Button_Percent_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox_Current.Text))
+            {
+                return;
+            }
             textBox_Operation.Text = button_Percent.Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
@@ -272,6 +304,9 @@ namespace Calculator
                     break;
                 case '/':
                     Button_Split_Click(sender, e);
+                    break;
+                case (char)8:
+                    Button_RemoveOneNum_Click(sender, e);
                     break;
             }
         }
