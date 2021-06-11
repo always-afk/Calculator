@@ -191,9 +191,7 @@ namespace Calculator
             {
                 return;
             }
-            textBox_Operation.Text = button_OneSplitByX.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
+            Swap(sender);
             Button_Result_Click(sender, e);
         }
 
@@ -229,7 +227,7 @@ namespace Calculator
                         listBox_Results.Items.Add(num + "^2 = " + res);
                         break;
                     case "1/x":
-                        res = 1.0 / num;
+                        res = CalculatorOperations.Split(1.0, num);
                         listBox_Results.Items.Add("1 / " + num + " = " + res);
                         break;
                 }
@@ -243,19 +241,19 @@ namespace Calculator
                 switch (textBox_Operation.Text)
                 {
                     case "+":
-                        res = fnum + snum;
+                        res = CalculatorOperations.Add(fnum, snum);
                         break;
                     case "-":
-                        res = fnum - snum;
+                        res = CalculatorOperations.Subtract(fnum, snum);
                         break;
                     case "*":
-                        res = fnum * snum;
+                        res = CalculatorOperations.Multiply(fnum, snum);
                         break;
                     case "/":
-                        res = fnum / snum;
+                        res = CalculatorOperations.Split(fnum, snum);
                         break;
                     case "%":
-                        res = fnum / snum * 100;
+                        res = CalculatorOperations.Percent(fnum, snum);
                         break;
                 }
 
@@ -331,6 +329,13 @@ namespace Calculator
             {
                 textBox_Current.Text = "-" + textBox_Current.Text;
             }
+        }
+
+        private void Swap(object sender)
+        {
+            textBox_Operation.Text = (sender as Button).Text;
+            textBox_Previous.Text = textBox_Current.Text;
+            textBox_Current.Text = null;
         }
     }
 }
