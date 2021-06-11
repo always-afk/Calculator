@@ -22,6 +22,9 @@ namespace Calculator
         private const double seven = 7.0;
         private const double eight = 8.0;
         private const double nine = 9.0;
+
+        private CalculatorOperations.Operation _curOper;
+
         public CalculatorForm()
         {
             InitializeComponent();
@@ -117,6 +120,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
+                _curOper = CalculatorOperations.Operation.Add;
             }            
         }
 
@@ -125,6 +129,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
+                _curOper = CalculatorOperations.Operation.Substract;
             }            
         }
 
@@ -133,6 +138,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
+                _curOper = CalculatorOperations.Operation.Multiply;
             }            
         }
 
@@ -141,6 +147,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
+                _curOper = CalculatorOperations.Operation.Split;
             }            
         }
 
@@ -149,6 +156,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
+                _curOper = CalculatorOperations.Operation.Sqrt;
                 Button_Result_Click(sender, e);
             }            
         }
@@ -158,6 +166,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
+                _curOper = CalculatorOperations.Operation.Pow2;
                 Button_Result_Click(sender, e);
             }            
         }
@@ -166,7 +175,9 @@ namespace Calculator
         {
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                Swap(sender);
+                _curOper = CalculatorOperations.Operation.Split;
+                textBox_Previous.Text += 1.0;
+                textBox_Operation.Text = button_Split.Text;
                 Button_Result_Click(sender, e);
             }            
         }
@@ -176,6 +187,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
+                _curOper = CalculatorOperations.Operation.Percent;
             }            
         }
 
@@ -185,22 +197,14 @@ namespace Calculator
             {
                 var fnum = Convert.ToDouble(textBox_Previous.Text);
                 if (String.IsNullOrEmpty(textBox_Current.Text))
-                {                    
-                    double res;
-
-                    switch (textBox_Operation.Text)
+                {               
+                    switch (_curOper)
                     {
-                        case "sqrt(x)":
-                            res = Math.Sqrt(fnum);
-                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + res);
+                        case CalculatorOperations.Operation.Sqrt:
+                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + CalculatorOperations.Sqrt(fnum));
                             break;
-                        case "x^2":
-                            res = Math.Pow(fnum, 2.0);
-                            listBox_Results.Items.Add(fnum + "^2 = " + res);
-                            break;
-                        case "1/x":
-                            res = CalculatorOperations.Split(1.0, fnum);
-                            listBox_Results.Items.Add("1 / " + fnum + " = " + res);
+                        case CalculatorOperations.Operation.Pow2:
+                            listBox_Results.Items.Add(fnum + "^2 = " + CalculatorOperations.Pow2(fnum));
                             break;
                     }
                 }
@@ -210,21 +214,21 @@ namespace Calculator
                     var snum = Convert.ToDouble(textBox_Current.Text);
                     var res = 0.0;
 
-                    switch (textBox_Operation.Text)
+                    switch (_curOper)
                     {
-                        case "+":
+                        case CalculatorOperations.Operation.Add:
                             res = CalculatorOperations.Add(fnum, snum);
                             break;
-                        case "-":
+                        case CalculatorOperations.Operation.Substract:
                             res = CalculatorOperations.Subtract(fnum, snum);
                             break;
-                        case "*":
+                        case CalculatorOperations.Operation.Multiply:
                             res = CalculatorOperations.Multiply(fnum, snum);
                             break;
-                        case "/":
+                        case CalculatorOperations.Operation.Split:
                             res = CalculatorOperations.Split(fnum, snum);
                             break;
-                        case "%":
+                        case CalculatorOperations.Operation.Percent:
                             res = CalculatorOperations.Percent(fnum, snum);
                             break;
                     }
