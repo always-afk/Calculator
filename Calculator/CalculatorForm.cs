@@ -81,14 +81,9 @@ namespace Calculator
         {
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-
-            }
-            else
-            {
                 textBox_Current.Text = textBox_Current.Text.TrimEnd(new char[]
                 { textBox_Current.Text.ElementAt(textBox_Current.Text.Length - 1) });
-            }
-            
+            }            
         }
 
         private void Button_RemoveOneElem_Click(object sender, EventArgs e)
@@ -119,147 +114,125 @@ namespace Calculator
 
         private void Button_Add_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            textBox_Operation.Text = button_Add.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
+                Swap(sender);
+            }            
         }
 
         private void Button_Minus_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            textBox_Operation.Text = button_Minus.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
+                Swap(sender);
+            }            
         }
 
         private void Button_Multiply_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            textBox_Operation.Text = button_Multiply.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
+                Swap(sender);
+            }            
         }
 
         private void Button_Split_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            textBox_Operation.Text = button_Split.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
+                Swap(sender);
+            }            
         }
 
         private void Button_Sqrt_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            textBox_Operation.Text = button_Sqrt.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
-            Button_Result_Click(sender, e);
+                Swap(sender);
+                Button_Result_Click(sender, e);
+            }            
         }
 
         private void Button_Power2_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            textBox_Operation.Text = button_Power2.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
-            Button_Result_Click(sender, e);
+                Swap(sender);
+                Button_Result_Click(sender, e);
+            }            
         }
 
         private void Button_OneSplitByX_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            Swap(sender);
-            Button_Result_Click(sender, e);
+                Swap(sender);
+                Button_Result_Click(sender, e);
+            }            
         }
 
         private void Button_Percent_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
+            if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                return;
-            }
-            textBox_Operation.Text = button_Percent.Text;
-            textBox_Previous.Text = textBox_Current.Text;
-            textBox_Current.Text = null;
+                Swap(sender);
+            }            
         }
 
         private void Button_Result_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Previous.Text))
-            {
-            }
-            else if (String.IsNullOrEmpty(textBox_Current.Text))
-            {
-                var num = Convert.ToDouble(textBox_Previous.Text);
-                double res;
-
-                switch (textBox_Operation.Text)
-                {
-                    case "sqrt(x)":
-                        res = Math.Sqrt(num);
-                        listBox_Results.Items.Add("sqrt(" + num + ") = " + res);
-                        break;
-                    case "x^2":
-                        res = Math.Pow(num, 2.0);
-                        listBox_Results.Items.Add(num + "^2 = " + res);
-                        break;
-                    case "1/x":
-                        res = CalculatorOperations.Split(1.0, num);
-                        listBox_Results.Items.Add("1 / " + num + " = " + res);
-                        break;
-                }
-            }
-            else
+            if (!String.IsNullOrEmpty(textBox_Previous.Text))
             {
                 var fnum = Convert.ToDouble(textBox_Previous.Text);
-                var snum = Convert.ToDouble(textBox_Current.Text);
-                var res = 0.0;
+                if (String.IsNullOrEmpty(textBox_Current.Text))
+                {                    
+                    double res;
 
-                switch (textBox_Operation.Text)
-                {
-                    case "+":
-                        res = CalculatorOperations.Add(fnum, snum);
-                        break;
-                    case "-":
-                        res = CalculatorOperations.Subtract(fnum, snum);
-                        break;
-                    case "*":
-                        res = CalculatorOperations.Multiply(fnum, snum);
-                        break;
-                    case "/":
-                        res = CalculatorOperations.Split(fnum, snum);
-                        break;
-                    case "%":
-                        res = CalculatorOperations.Percent(fnum, snum);
-                        break;
+                    switch (textBox_Operation.Text)
+                    {
+                        case "sqrt(x)":
+                            res = Math.Sqrt(fnum);
+                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + res);
+                            break;
+                        case "x^2":
+                            res = Math.Pow(fnum, 2.0);
+                            listBox_Results.Items.Add(fnum + "^2 = " + res);
+                            break;
+                        case "1/x":
+                            res = CalculatorOperations.Split(1.0, fnum);
+                            listBox_Results.Items.Add("1 / " + fnum + " = " + res);
+                            break;
+                    }
                 }
 
-                listBox_Results.Items.Add(textBox_Previous.Text + " " + textBox_Operation.Text + " " + textBox_Current.Text + " = " + res);                
+                else
+                {
+                    var snum = Convert.ToDouble(textBox_Current.Text);
+                    var res = 0.0;
+
+                    switch (textBox_Operation.Text)
+                    {
+                        case "+":
+                            res = CalculatorOperations.Add(fnum, snum);
+                            break;
+                        case "-":
+                            res = CalculatorOperations.Subtract(fnum, snum);
+                            break;
+                        case "*":
+                            res = CalculatorOperations.Multiply(fnum, snum);
+                            break;
+                        case "/":
+                            res = CalculatorOperations.Split(fnum, snum);
+                            break;
+                        case "%":
+                            res = CalculatorOperations.Percent(fnum, snum);
+                            break;
+                    }
+
+                    listBox_Results.Items.Add(textBox_Previous.Text + " " + textBox_Operation.Text + " " + textBox_Current.Text + " = " + res);
+                }
+                Button_RemoveAll_Click(sender, e);
             }
-            Button_RemoveAll_Click(sender, e);
         }
 
         private void ListBox_Results_SelectedIndexChanged(object sender, EventArgs e)
