@@ -174,10 +174,10 @@ namespace Calculator
                     switch (_curOper)
                     {
                         case Operations.Sqrt:
-                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + CalculatorOperations.Sqrt(fnum));
+                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + CalculatorServeses.Sqrt(fnum));
                             break;
                         case Operations.Pow2:
-                            listBox_Results.Items.Add(fnum + "^2 = " + CalculatorOperations.Pow2(fnum));
+                            listBox_Results.Items.Add(fnum + "^2 = " + CalculatorServeses.Pow2(fnum));
                             break;
                     }
                 }
@@ -190,19 +190,19 @@ namespace Calculator
                     switch (_curOper)
                     {
                         case Operations.Add:
-                            res = CalculatorOperations.Add(fnum, snum);
+                            res = CalculatorServeses.Add(fnum, snum);
                             break;
                         case Operations.Substract:
-                            res = CalculatorOperations.Subtract(fnum, snum);
+                            res = CalculatorServeses.Subtract(fnum, snum);
                             break;
                         case Operations.Multiply:
-                            res = CalculatorOperations.Multiply(fnum, snum);
+                            res = CalculatorServeses.Multiply(fnum, snum);
                             break;
                         case Operations.Split:
-                            res = CalculatorOperations.Split(fnum, snum);
+                            res = CalculatorServeses.Split(fnum, snum);
                             break;
                         case Operations.Percent:
-                            res = CalculatorOperations.Percent(fnum, snum);
+                            res = CalculatorServeses.Percent(fnum, snum);
                             break;
                     }
 
