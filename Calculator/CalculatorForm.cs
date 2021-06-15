@@ -30,55 +30,25 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void Button_0_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += zero; 
-        }
+        private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += zero;
+       
+        private void Button_1_Click(object sender, EventArgs e) => textBox_Current.Text += one;
+        
+        private void Button_2_Click(object sender, EventArgs e) => textBox_Current.Text += two;
 
-        private void Button_1_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += one;
-        }
+        private void Button_3_Click(object sender, EventArgs e) => textBox_Current.Text += three;
 
-        private void Button_2_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += two;
-        }
+        private void Button_4_Click(object sender, EventArgs e) => textBox_Current.Text += four;
 
-        private void Button_3_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += three;
-        }
+        private void Button_5_Click(object sender, EventArgs e) => textBox_Current.Text += five;
 
-        private void Button_4_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += four;
-        }
+        private void Button_6_Click(object sender, EventArgs e) => textBox_Current.Text += six;
 
-        private void Button_5_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += five;
-        }
+        private void Button_7_Click(object sender, EventArgs e) => textBox_Current.Text += seven;
 
-        private void Button_6_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += six;
-        }
+        private void Button_8_Click(object sender, EventArgs e) => textBox_Current.Text += eight;
 
-        private void Button_7_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += seven;
-        }
-
-        private void Button_8_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += eight;
-        }
-
-        private void Button_9_Click(object sender, EventArgs e)
-        {
-            textBox_Current.Text += nine;
-        }
+        private void Button_9_Click(object sender, EventArgs e) => textBox_Current.Text += nine;
 
         private void Button_RemoveOneNum_Click(object sender, EventArgs e)
         {
