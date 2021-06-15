@@ -26,7 +26,7 @@ namespace Calculator
         private const string Point = ",";
 
 
-        private CalculatorOperations.Operation _curOper;
+        private Operations _curOper;
 
         public CalculatorForm()
         {
@@ -93,7 +93,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = CalculatorOperations.Operation.Add;
+                _curOper = Operations.Add;
             }            
         }
 
@@ -102,7 +102,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = CalculatorOperations.Operation.Substract;
+                _curOper = Operations.Substract;
             }            
         }
 
@@ -111,7 +111,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = CalculatorOperations.Operation.Multiply;
+                _curOper = Operations.Multiply;
             }            
         }
 
@@ -120,7 +120,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = CalculatorOperations.Operation.Split;
+                _curOper = Operations.Split;
             }            
         }
 
@@ -129,7 +129,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = CalculatorOperations.Operation.Sqrt;
+                _curOper = Operations.Sqrt;
                 Button_Result_Click(sender, e);
             }            
         }
@@ -139,7 +139,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = CalculatorOperations.Operation.Pow2;
+                _curOper = Operations.Pow2;
                 Button_Result_Click(sender, e);
             }            
         }
@@ -148,7 +148,7 @@ namespace Calculator
         {
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                _curOper = CalculatorOperations.Operation.Split;
+                _curOper = Operations.Split;
                 textBox_Previous.Text += 1.0;
                 textBox_Operation.Text = button_Split.Text;
                 Button_Result_Click(sender, e);
@@ -160,7 +160,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = CalculatorOperations.Operation.Percent;
+                _curOper = Operations.Percent;
             }            
         }
 
@@ -173,10 +173,10 @@ namespace Calculator
                 {               
                     switch (_curOper)
                     {
-                        case CalculatorOperations.Operation.Sqrt:
+                        case Operations.Sqrt:
                             listBox_Results.Items.Add("sqrt(" + fnum + ") = " + CalculatorOperations.Sqrt(fnum));
                             break;
-                        case CalculatorOperations.Operation.Pow2:
+                        case Operations.Pow2:
                             listBox_Results.Items.Add(fnum + "^2 = " + CalculatorOperations.Pow2(fnum));
                             break;
                     }
@@ -189,19 +189,19 @@ namespace Calculator
 
                     switch (_curOper)
                     {
-                        case CalculatorOperations.Operation.Add:
+                        case Operations.Add:
                             res = CalculatorOperations.Add(fnum, snum);
                             break;
-                        case CalculatorOperations.Operation.Substract:
+                        case Operations.Substract:
                             res = CalculatorOperations.Subtract(fnum, snum);
                             break;
-                        case CalculatorOperations.Operation.Multiply:
+                        case Operations.Multiply:
                             res = CalculatorOperations.Multiply(fnum, snum);
                             break;
-                        case CalculatorOperations.Operation.Split:
+                        case Operations.Split:
                             res = CalculatorOperations.Split(fnum, snum);
                             break;
-                        case CalculatorOperations.Operation.Percent:
+                        case Operations.Percent:
                             res = CalculatorOperations.Percent(fnum, snum);
                             break;
                     }
