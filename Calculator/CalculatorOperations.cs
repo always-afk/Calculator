@@ -8,16 +8,6 @@ namespace Calculator
 {
     static class CalculatorOperations
     {
-        public enum Operation
-        {
-            Add,
-            Substract,
-            Multiply,
-            Split,
-            Percent,
-            Sqrt,
-            Pow2
-        }
         public static double Add(double fnum, double snum)
         {
             return fnum + snum;

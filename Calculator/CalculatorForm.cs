@@ -12,16 +12,19 @@ namespace Calculator
 {
     public partial class CalculatorForm : Form
     {
-        private const double ZERO = 0.0;
-        private const double ONE = 1.0;
-        private const double TWO = 2.0;
-        private const double THREE = 3.0;
-        private const double FOUR = 4.0;
-        private const double FIVE = 5.0;
-        private const double SIX = 6.0;
-        private const double SEVEN = 7.0;
-        private const double EIGHT = 8.0;
-        private const double NINE = 9.0;
+        private const double Zero = 0.0;
+        private const double One = 1.0;
+        private const double Two = 2.0;
+        private const double Three = 3.0;
+        private const double Four = 4.0;
+        private const double Five = 5.0;
+        private const double Six = 6.0;
+        private const double Seven = 7.0;
+        private const double Eight = 8.0;
+        private const double Nine = 9.0;
+        private const string ZeroWithPoint = "0,";
+        private const string Point = ",";
+
 
         private CalculatorOperations.Operation _curOper;
 
@@ -30,25 +33,25 @@ namespace Calculator
             InitializeComponent();
         }
 
-        private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += ZERO;
+        private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += Zero;
        
-        private void Button_1_Click(object sender, EventArgs e) => textBox_Current.Text += ONE;
+        private void Button_1_Click(object sender, EventArgs e) => textBox_Current.Text += One;
         
-        private void Button_2_Click(object sender, EventArgs e) => textBox_Current.Text += TWO;
+        private void Button_2_Click(object sender, EventArgs e) => textBox_Current.Text += Two;
 
-        private void Button_3_Click(object sender, EventArgs e) => textBox_Current.Text += THREE;
+        private void Button_3_Click(object sender, EventArgs e) => textBox_Current.Text += Three;
 
-        private void Button_4_Click(object sender, EventArgs e) => textBox_Current.Text += FOUR;
+        private void Button_4_Click(object sender, EventArgs e) => textBox_Current.Text += Four;
 
-        private void Button_5_Click(object sender, EventArgs e) => textBox_Current.Text += FIVE;
+        private void Button_5_Click(object sender, EventArgs e) => textBox_Current.Text += Five;
 
-        private void Button_6_Click(object sender, EventArgs e) => textBox_Current.Text += SIX;
+        private void Button_6_Click(object sender, EventArgs e) => textBox_Current.Text += Six;
 
-        private void Button_7_Click(object sender, EventArgs e) => textBox_Current.Text += SEVEN;
+        private void Button_7_Click(object sender, EventArgs e) => textBox_Current.Text += Seven;
 
-        private void Button_8_Click(object sender, EventArgs e) => textBox_Current.Text += EIGHT;
+        private void Button_8_Click(object sender, EventArgs e) => textBox_Current.Text += Eight;
 
-        private void Button_9_Click(object sender, EventArgs e) => textBox_Current.Text += NINE;
+        private void Button_9_Click(object sender, EventArgs e) => textBox_Current.Text += Nine;
 
         private void Button_RemoveOneNum_Click(object sender, EventArgs e)
         {
@@ -70,11 +73,11 @@ namespace Calculator
         {
             if (String.IsNullOrEmpty(textBox_Current.Text))
             {
-                textBox_Current.Text += "0,";
+                textBox_Current.Text += ZeroWithPoint;
             }
             else
             {
-                textBox_Current.Text += ",";
+                textBox_Current.Text += Point;
             }
         }       
 
