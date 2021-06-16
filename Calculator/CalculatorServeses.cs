@@ -6,39 +6,41 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    static class CalculatorServeses
+    public class CalculatorServeses
     {
-        public static double Add(double fnum, double snum)
+        public CalculatorServeses() { }
+
+        public double Add(double fnum, double snum)
         {
             return fnum + snum;
         }
 
-        public static double Subtract(double fnum, double snum)
+        public double Subtract(double fnum, double snum)
         {
             return fnum - snum;
         }
 
-        public static double Multiply(double fnum, double snum)
+        public double Multiply(double fnum, double snum)
         {
             return fnum * snum;
         }
 
-        public static double Split(double fnum, double snum)
+        public double Split(double fnum, double snum)
         {
             return fnum / snum;
         }
 
-        public static double Percent(double fnum, double snum)
+        public double Percent(double fnum, double snum)
         {
             return Multiply(Split(snum, fnum), 100);
         }
 
-        public static double Sqrt(double num)
+        public double Sqrt(double num)
         {
             return Math.Sqrt(num);
         }
 
-        public static double Pow2(double num)
+        public double Pow2(double num)
         {
             return Math.Pow(num, 2.0);
         }

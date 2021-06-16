@@ -25,12 +25,17 @@ namespace Calculator
         private const string ZeroWithPoint = "0,";
         private const string Point = ",";
 
+        private const int MaxLenght = 10;
+
 
         private Operations _curOper;
+        private CalculatorServeses _calculator;
+
 
         public CalculatorForm()
         {
             InitializeComponent();
+            _calculator = new CalculatorServeses();
         }
 
         private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += Zero;
@@ -174,10 +179,10 @@ namespace Calculator
                     switch (_curOper)
                     {
                         case Operations.Sqrt:
-                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + CalculatorServeses.Sqrt(fnum));
+                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + _calculator.Sqrt(fnum));
                             break;
                         case Operations.Pow2:
-                            listBox_Results.Items.Add(fnum + "^2 = " + CalculatorServeses.Pow2(fnum));
+                            listBox_Results.Items.Add(fnum + "^2 = " + _calculator.Pow2(fnum));
                             break;
                     }
                 }
@@ -190,19 +195,19 @@ namespace Calculator
                     switch (_curOper)
                     {
                         case Operations.Add:
-                            res = CalculatorServeses.Add(fnum, snum);
+                            res = _calculator.Add(fnum, snum);
                             break;
                         case Operations.Substract:
-                            res = CalculatorServeses.Subtract(fnum, snum);
+                            res = _calculator.Subtract(fnum, snum);
                             break;
                         case Operations.Multiply:
-                            res = CalculatorServeses.Multiply(fnum, snum);
+                            res = _calculator.Multiply(fnum, snum);
                             break;
                         case Operations.Split:
-                            res = CalculatorServeses.Split(fnum, snum);
+                            res = _calculator.Split(fnum, snum);
                             break;
                         case Operations.Percent:
-                            res = CalculatorServeses.Percent(fnum, snum);
+                            res = _calculator.Percent(fnum, snum);
                             break;
                     }
 
@@ -286,6 +291,14 @@ namespace Calculator
             textBox_Operation.Text = (sender as Button).Text;
             textBox_Previous.Text = textBox_Current.Text;
             textBox_Current.Text = null;
+        }
+
+        private void textBox_Current_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox_Current.Text.Length > MaxLenght)
+            {
+                textBox_Current.Text = textBox_Current.Text.Substring(textBox_Current.Text.Length - MaxLenght);
+            }
         }
     }
 }

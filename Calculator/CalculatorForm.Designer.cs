@@ -307,6 +307,7 @@ namespace Calculator
             this.textBox_Current.Size = new System.Drawing.Size(318, 20);
             this.textBox_Current.TabIndex = 24;
             this.textBox_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_Current.TextChanged += new System.EventHandler(this.textBox_Current_TextChanged);
             // 
             // textBox_Operation
             // 
