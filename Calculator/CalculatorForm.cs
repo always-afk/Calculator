@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CalculatorLibrary;
 
 namespace Calculator
 {
@@ -255,18 +256,6 @@ namespace Calculator
                     break;
                 case '9':
                     Button_9_Click(sender, e);
-                    break;
-                case '+':
-                    Button_Add_Click(sender, e);
-                    break;
-                case '-':
-                    Button_Minus_Click(sender, e);
-                    break;
-                case '*':
-                    Button_Multiply_Click(sender, e);
-                    break;
-                case '/':
-                    Button_Split_Click(sender, e);
                     break;
                 case (char)8:
                     Button_RemoveOneNum_Click(sender, e);
