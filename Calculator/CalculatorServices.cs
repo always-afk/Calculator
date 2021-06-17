@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    public class CalculatorServeses
+    public class CalculatorServices
     {
-        public CalculatorServeses() { }
+        public CalculatorServices() { }
 
         public double Add(double fnum, double snum)
         {

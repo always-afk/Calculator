@@ -29,13 +29,13 @@ namespace Calculator
 
 
         private Operations _curOper;
-        private CalculatorServeses _calculator;
+        private CalculatorServices _calculator;
 
 
         public CalculatorForm()
         {
             InitializeComponent();
-            _calculator = new CalculatorServeses();
+            _calculator = new CalculatorServices();
         }
 
         private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += Zero;
