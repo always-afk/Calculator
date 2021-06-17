@@ -23,20 +23,20 @@ namespace Calculator
         private const double Seven = 7.0;
         private const double Eight = 8.0;
         private const double Nine = 9.0;
-        private const string ZeroWithPoint = "0,";
-        private const string Point = ",";
+        
 
         private const int MaxLenght = 10;
 
 
         private Operations _curOper;
         private CalculatorServices _calculator;
-
+        private ViewServices _view;
 
         public CalculatorForm()
         {
             InitializeComponent();
             _calculator = new CalculatorServices();
+            _view = new ViewServices();
         }
 
         private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += Zero;
@@ -77,14 +77,7 @@ namespace Calculator
 
         private void Button_Point_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBox_Current.Text))
-            {
-                textBox_Current.Text += ZeroWithPoint;
-            }
-            else if (!textBox_Current.Text.Contains(","))
-            {
-                textBox_Current.Text += Point;
-            }
+            textBox_Current.Text = _view.PointLogic(textBox_Current.Text);
         }       
 
         private void Button_RemoveAll_Click(object sender, EventArgs e)
