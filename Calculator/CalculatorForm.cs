@@ -80,7 +80,7 @@ namespace Calculator
             {
                 textBox_Current.Text += ZeroWithPoint;
             }
-            else
+            else if (!textBox_Current.Text.Contains(","))
             {
                 textBox_Current.Text += Point;
             }
@@ -297,7 +297,17 @@ namespace Calculator
         {
             if (textBox_Current.Text.Length > MaxLenght)
             {
-                textBox_Current.Text = textBox_Current.Text.Substring(textBox_Current.Text.Length - MaxLenght);
+                if (textBox_Current.Text[1] == ',')
+                {
+                    if (textBox_Current.Text.Length - MaxLenght > 1)
+                    {
+                        textBox_Current.Text = textBox_Current.Text.Substring(textBox_Current.Text.Length - MaxLenght);
+                    }
+                }
+                else
+                {
+                    textBox_Current.Text = textBox_Current.Text.Substring(textBox_Current.Text.Length - MaxLenght);
+                }            
             }
         }
     }
