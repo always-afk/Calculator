@@ -27,15 +27,11 @@ namespace Calculator
 
         private const int MaxLenght = 10;
 
-
-        private Operations _curOper;
-        private CalculatorServices _calculator;
         private ViewServices _view;
 
         public CalculatorForm()
         {
             InitializeComponent();
-            _calculator = new CalculatorServices();
             _view = new ViewServices();
         }
 
@@ -92,7 +88,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = Operations.Add;
+                _view.CurrentOperation = Operations.Add;
             }            
         }
 
@@ -101,7 +97,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = Operations.Substract;
+                _view.CurrentOperation = Operations.Substract;
             }            
         }
 
@@ -110,7 +106,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = Operations.Multiply;
+                _view.CurrentOperation = Operations.Multiply;
             }            
         }
 
@@ -119,7 +115,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = Operations.Split;
+                _view.CurrentOperation = Operations.Split;
             }            
         }
 
@@ -128,7 +124,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = Operations.Sqrt;
+                _view.CurrentOperation = Operations.Sqrt;
                 Button_Result_Click(sender, e);
             }            
         }
@@ -138,7 +134,7 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = Operations.Pow2;
+                _view.CurrentOperation = Operations.Pow2;
                 Button_Result_Click(sender, e);
             }            
         }
@@ -147,7 +143,7 @@ namespace Calculator
         {
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
-                _curOper = Operations.Split;
+                _view.CurrentOperation = Operations.Split;
                 textBox_Previous.Text += 1.0;
                 textBox_Operation.Text = button_Split.Text;
                 Button_Result_Click(sender, e);
@@ -159,56 +155,15 @@ namespace Calculator
             if (!String.IsNullOrEmpty(textBox_Current.Text))
             {
                 Swap(sender);
-                _curOper = Operations.Percent;
+                _view.CurrentOperation = Operations.Percent;
             }            
         }
 
         private void Button_Result_Click(object sender, EventArgs e)
         {
-            if (!String.IsNullOrEmpty(textBox_Previous.Text))
-            {
-                var fnum = Convert.ToDouble(textBox_Previous.Text);
-                if (String.IsNullOrEmpty(textBox_Current.Text))
-                {               
-                    switch (_curOper)
-                    {
-                        case Operations.Sqrt:
-                            listBox_Results.Items.Add("sqrt(" + fnum + ") = " + _calculator.Sqrt(fnum));
-                            break;
-                        case Operations.Pow2:
-                            listBox_Results.Items.Add(fnum + "^2 = " + _calculator.Pow2(fnum));
-                            break;
-                    }
-                }
-
-                else
-                {
-                    var snum = Convert.ToDouble(textBox_Current.Text);
-                    var res = 0.0;
-
-                    switch (_curOper)
-                    {
-                        case Operations.Add:
-                            res = _calculator.Add(fnum, snum);
-                            break;
-                        case Operations.Substract:
-                            res = _calculator.Subtract(fnum, snum);
-                            break;
-                        case Operations.Multiply:
-                            res = _calculator.Multiply(fnum, snum);
-                            break;
-                        case Operations.Split:
-                            res = _calculator.Split(fnum, snum);
-                            break;
-                        case Operations.Percent:
-                            res = _calculator.Percent(fnum, snum);
-                            break;
-                    }
-
-                    listBox_Results.Items.Add(textBox_Previous.Text + " " + textBox_Operation.Text + " " + textBox_Current.Text + " = " + res);
-                }
-                Button_RemoveAll_Click(sender, e);
-            }
+            listBox_Results.Items.Add(_view.FindRes(textBox_Current.Text, textBox_Previous.Text));
+            Button_RemoveAll_Click(sender, e);
+            
         }
 
         private void ListBox_Results_SelectedIndexChanged(object sender, EventArgs e)
