@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CalculatorLibrary;
+using DBWorker;
 
 namespace Calculator
 {
@@ -28,11 +29,13 @@ namespace Calculator
         private const int MaxLenght = 10;
 
         private ViewServices _view;
+        private DataWorker _worker;
 
         public CalculatorForm()
         {
             InitializeComponent();
             _view = new ViewServices();
+            _worker = new DataWorker();
         }
 
         private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += Zero;
@@ -161,7 +164,9 @@ namespace Calculator
 
         private void Button_Result_Click(object sender, EventArgs e)
         {
-            listBox_Results.Items.Add(_view.FindRes(textBox_Current.Text, textBox_Previous.Text));
+            Note note = _view.FindRes(textBox_Current.Text, textBox_Previous.Text);
+            _worker.Notes.Add(note);
+            listBox_Results.Items.Add(note);
             Button_RemoveAll_Click(sender, e);
             
         }
@@ -246,6 +251,22 @@ namespace Calculator
                     textBox_Current.Text = textBox_Current.Text.Substring(textBox_Current.Text.Length - MaxLenght);
                 }            
             }
+        }
+
+        private void buttonSaveClick(object sender, EventArgs e)
+        {
+            if (_worker.SaveHistory()) MessageBox.Show("Data is saved");
+            else MessageBox.Show("Error");
+        }
+
+        private void ButtonLoadClick(object sender, EventArgs e)
+        {
+            if (_worker.LoadHistory())
+            {
+                MessageBox.Show("Data is saved");
+                listBox_Results.Items.AddRange(_worker.Notes.ToArray());
+            }
+            else MessageBox.Show("Error");
         }
     }
 }

@@ -57,6 +57,8 @@ namespace Calculator
             this.textBox_Operation = new System.Windows.Forms.TextBox();
             this.textBox_Previous = new System.Windows.Forms.TextBox();
             this.listBox_Results = new System.Windows.Forms.ListBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonLoad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_1
@@ -237,7 +239,6 @@ namespace Calculator
             this.button_Sqrt.TabIndex = 17;
             this.button_Sqrt.Text = "sqrt(x)";
             this.button_Sqrt.UseVisualStyleBackColor = true;
-            this.button_Sqrt.Click += new System.EventHandler(this.Button_Sqrt_Click);
             // 
             // button_Power2
             // 
@@ -247,7 +248,6 @@ namespace Calculator
             this.button_Power2.TabIndex = 18;
             this.button_Power2.Text = "x^2";
             this.button_Power2.UseVisualStyleBackColor = true;
-            this.button_Power2.Click += new System.EventHandler(this.Button_Power2_Click);
             // 
             // button_OneSplitByX
             // 
@@ -337,10 +337,32 @@ namespace Calculator
             this.listBox_Results.TabIndex = 27;
             this.listBox_Results.SelectedIndexChanged += new System.EventHandler(this.ListBox_Results_SelectedIndexChanged);
             // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(548, 12);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.TabIndex = 28;
+            this.buttonSave.Text = "Save History";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSaveClick);
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Location = new System.Drawing.Point(548, 41);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoad.TabIndex = 29;
+            this.buttonLoad.Text = "Load History";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.ButtonLoadClick);
+            // 
             // CalculatorForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(551, 266);
+            this.ClientSize = new System.Drawing.Size(663, 266);
+            this.Controls.Add(this.buttonLoad);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.listBox_Results);
             this.Controls.Add(this.textBox_Previous);
             this.Controls.Add(this.textBox_Operation);
@@ -408,6 +430,8 @@ namespace Calculator
         private System.Windows.Forms.TextBox textBox_Operation;
         private System.Windows.Forms.TextBox textBox_Previous;
         private System.Windows.Forms.ListBox listBox_Results;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonLoad;
     }
 }
 

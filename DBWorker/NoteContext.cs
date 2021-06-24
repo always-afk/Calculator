@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace DBWorker
 {
-    class NoteContext : DbContext
+    public class NoteContext : DbContext
     {
         public NoteContext() : base("DbConnection") { }
 
