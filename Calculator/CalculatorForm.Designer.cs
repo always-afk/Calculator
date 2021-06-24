@@ -46,8 +46,6 @@ namespace Calculator
             this.button_Minus = new System.Windows.Forms.Button();
             this.button_Multiply = new System.Windows.Forms.Button();
             this.button_Split = new System.Windows.Forms.Button();
-            this.button_Sqrt = new System.Windows.Forms.Button();
-            this.button_Power2 = new System.Windows.Forms.Button();
             this.button_OneSplitByX = new System.Windows.Forms.Button();
             this.button_RemoveOneNum = new System.Windows.Forms.Button();
             this.button_RemoveOneElem = new System.Windows.Forms.Button();
@@ -231,24 +229,6 @@ namespace Calculator
             this.button_Split.UseVisualStyleBackColor = true;
             this.button_Split.Click += new System.EventHandler(this.Button_Split_Click);
             // 
-            // button_Sqrt
-            // 
-            this.button_Sqrt.Location = new System.Drawing.Point(170, 118);
-            this.button_Sqrt.Name = "button_Sqrt";
-            this.button_Sqrt.Size = new System.Drawing.Size(75, 23);
-            this.button_Sqrt.TabIndex = 17;
-            this.button_Sqrt.Text = "sqrt(x)";
-            this.button_Sqrt.UseVisualStyleBackColor = true;
-            // 
-            // button_Power2
-            // 
-            this.button_Power2.Location = new System.Drawing.Point(89, 118);
-            this.button_Power2.Name = "button_Power2";
-            this.button_Power2.Size = new System.Drawing.Size(75, 23);
-            this.button_Power2.TabIndex = 18;
-            this.button_Power2.Text = "x^2";
-            this.button_Power2.UseVisualStyleBackColor = true;
-            // 
             // button_OneSplitByX
             // 
             this.button_OneSplitByX.Location = new System.Drawing.Point(8, 118);
@@ -372,8 +352,6 @@ namespace Calculator
             this.Controls.Add(this.button_RemoveOneElem);
             this.Controls.Add(this.button_RemoveOneNum);
             this.Controls.Add(this.button_OneSplitByX);
-            this.Controls.Add(this.button_Power2);
-            this.Controls.Add(this.button_Sqrt);
             this.Controls.Add(this.button_Split);
             this.Controls.Add(this.button_Multiply);
             this.Controls.Add(this.button_Minus);
@@ -419,8 +397,6 @@ namespace Calculator
         private System.Windows.Forms.Button button_Minus;
         private System.Windows.Forms.Button button_Multiply;
         private System.Windows.Forms.Button button_Split;
-        private System.Windows.Forms.Button button_Sqrt;
-        private System.Windows.Forms.Button button_Power2;
         private System.Windows.Forms.Button button_OneSplitByX;
         private System.Windows.Forms.Button button_RemoveOneNum;
         private System.Windows.Forms.Button button_RemoveOneElem;

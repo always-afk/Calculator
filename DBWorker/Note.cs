@@ -13,10 +13,5 @@ namespace DBWorker
         public double SecondNum { get; set; }
         public double Result { get; set; }
         public string Operation { get; set; }
-
-        public override string ToString()
-        {
-            return $"{FirstNum} {Operation} {SecondNum} = {Result}";
-        }
     }
 }

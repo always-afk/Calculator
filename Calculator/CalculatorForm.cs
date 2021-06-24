@@ -166,7 +166,7 @@ namespace Calculator
         {
             Note note = _view.FindRes(textBox_Current.Text, textBox_Previous.Text);
             _worker.Notes.Add(note);
-            listBox_Results.Items.Add(note);
+            listBox_Results.Items.Add($"{note.FirstNum} {note.Operation} {note.SecondNum} = {note.Result}");
             Button_RemoveAll_Click(sender, e);
             
         }
@@ -261,10 +261,14 @@ namespace Calculator
 
         private void ButtonLoadClick(object sender, EventArgs e)
         {
+            listBox_Results.Items.Clear();
             if (_worker.LoadHistory())
             {
-                MessageBox.Show("Data is saved");
-                listBox_Results.Items.AddRange(_worker.Notes.ToArray());
+                MessageBox.Show("Data is loaded");
+                foreach (Note note in _worker.Notes)
+                {
+                    listBox_Results.Items.Add($"{note.FirstNum} {note.Operation} {note.SecondNum} = {note.Result}");
+                }
             }
             else MessageBox.Show("Error");
         }

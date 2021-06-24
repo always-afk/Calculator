@@ -25,13 +25,16 @@ namespace CalculatorLibrary
 
             using (NoteContext db = new NoteContext())
             {
+                db.Notes.RemoveRange(db.Notes);
                 db.Notes.AddRange(Notes);
+                db.SaveChanges();
                 return true;
             }            
         }
 
         public bool LoadHistory()
         {
+            Notes.Clear();
             using (NoteContext db = new NoteContext())
             {
                 foreach (Note note in db.Notes)
