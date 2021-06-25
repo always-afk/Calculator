@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataWorker.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="NoteContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
