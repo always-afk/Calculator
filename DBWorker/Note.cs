@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DBWorker
+namespace CalculatorDB
 {
     public class Note
     {

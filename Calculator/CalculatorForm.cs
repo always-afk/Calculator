@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CalculatorLibrary;
-using DBWorker;
+using CalculatorLogic;
+using CalculatorDB;
 
-namespace Calculator
+namespace CalculatorPresentation
 {
     public partial class CalculatorForm : Form
     {

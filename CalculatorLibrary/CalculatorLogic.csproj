@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0CA5F694-F3F2-47D9-85EA-BF9101B062A7}</ProjectGuid>
+    <ProjectGuid>{F32D0461-2410-4667-AC88-483056E7B6F8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DBWorker</RootNamespace>
-    <AssemblyName>DBWorker</AssemblyName>
+    <RootNamespace>CalculatorLogic</RootNamespace>
+    <AssemblyName>CalculatorLogic</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -51,10 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataWorker.cs" />
-    <Compile Include="Note.cs" />
-    <Compile Include="NoteContext.cs" />
+    <Compile Include="CalculatorServices.cs" />
+    <Compile Include="Operations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBWorker\CalculatorDB.csproj">
+      <Project>{0ca5f694-f3f2-47d9-85ea-bf9101b062a7}</Project>
+      <Name>CalculatorDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

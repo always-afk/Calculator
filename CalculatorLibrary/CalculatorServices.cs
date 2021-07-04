@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalculatorLibrary
+namespace CalculatorLogic
 {
     public class CalculatorServices
     {
