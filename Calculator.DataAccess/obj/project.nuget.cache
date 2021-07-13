@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y4QZmys0yV2loyq5Zwqw+0KCNZNLOX8HpF/Gw6XMSDqSttu/N7Gdax2oNf7w6w66hZJhThkEtj5TIwXNkQrndQ==",
+  "dgSpecHash": "nVqI1irl21oDQJcTTIdREKkU5VLoikbtvaeEJzkfcvFXzJBLBkyD1t5EXd60ZTwqXY1pzOurvAK59Le//GoTQw==",
   "success": true,
-  "projectFilePath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj",
+  "projectFilePath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artem\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\artem\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

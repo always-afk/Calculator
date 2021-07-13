@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj": {}
+    "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj": {}
   },
   "projects": {
-    "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj": {
+    "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj",
+        "projectUniqueName": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj",
         "projectName": "Calculator.BusinessLogic",
-        "projectPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj",
+        "projectPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\obj\\",
+        "outputPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj": {
-                "projectPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj"
+              "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj": {
+                "projectPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj": {
+    "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj",
+        "projectUniqueName": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj",
         "projectName": "Calculator.DataAccess",
-        "projectPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj",
+        "projectPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.DataAccess\\Calculator.DataAccess.csproj",
         "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-        "outputPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.DataAccess\\obj\\",
+        "outputPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

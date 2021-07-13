@@ -5743,11 +5743,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.Presentation\\Calculator.Presentation.csproj",
+      "projectUniqueName": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.Presentation\\Calculator.Presentation.csproj",
       "projectName": "Calculator.Presentation",
-      "projectPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.Presentation\\Calculator.Presentation.csproj",
+      "projectPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.Presentation\\Calculator.Presentation.csproj",
       "packagesPath": "C:\\Users\\artem\\.nuget\\packages\\",
-      "outputPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.Presentation\\obj\\",
+      "outputPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5768,8 +5768,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj": {
-              "projectPath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj"
+            "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj": {
+              "projectPath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj"
             }
           }
         }

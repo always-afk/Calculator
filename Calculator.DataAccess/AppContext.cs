@@ -18,7 +18,7 @@ namespace Calculator.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-49455G6\\SQLEXPRESS;Database=CalculatorNotes;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=CalculatorNotes;Trusted_Connection=True");
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rECG7Wgi/4aiSbJ66SHfCDNsaxL+dHzw/r5lvyHDRjmfS70UdNQI9Xq1v25v+nbUPuz0eIuvYdHtkOtjUjCCoQ==",
+  "dgSpecHash": "SAQ1C0fOQtnRnTx0BWXrDNDQvii6LxN44cL30Cs10Mb/yYj5MDTgp8fAnq/O2tKN4cZqB0FcBECeqAm56pEoHQ==",
   "success": true,
-  "projectFilePath": "E:\\Artyom\\Studing\\TMSProjects\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj",
+  "projectFilePath": "E:\\Artyom\\Studing\\TMS\\Calculator\\Calculator.BusinessLogic\\Calculator.BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\artem\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\artem\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
