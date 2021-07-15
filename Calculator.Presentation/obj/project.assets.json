@@ -441,6 +441,18 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "SimpleInjector/5.3.2": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel": "4.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.1/SimpleInjector.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/SimpleInjector.dll": {}
+        }
+      },
       "System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2212,6 +2224,30 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.3.0.nupkg.sha512",
         "runtime.native.system.nuspec"
+      ]
+    },
+    "SimpleInjector/5.3.2": {
+      "sha512": "YNpunojK3+pK9S9D7sWpeR6me41StcurcMc9XB2UZE44cYUImXL6SKoxo2sffcq8YVou0/JX/Wjf2UuY1JcRyQ==",
+      "type": "package",
+      "path": "simpleinjector/5.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/SimpleInjector.dll",
+        "lib/net45/SimpleInjector.xml",
+        "lib/net461/SimpleInjector.dll",
+        "lib/net461/SimpleInjector.xml",
+        "lib/netstandard1.0/SimpleInjector.dll",
+        "lib/netstandard1.0/SimpleInjector.xml",
+        "lib/netstandard1.3/SimpleInjector.dll",
+        "lib/netstandard1.3/SimpleInjector.xml",
+        "lib/netstandard2.0/SimpleInjector.dll",
+        "lib/netstandard2.0/SimpleInjector.xml",
+        "lib/netstandard2.1/SimpleInjector.dll",
+        "lib/netstandard2.1/SimpleInjector.xml",
+        "simpleinjector.5.3.2.nupkg.sha512",
+        "simpleinjector.nuspec",
+        "simpleinjector.png"
       ]
     },
     "System.Collections/4.3.0": {
@@ -5733,7 +5769,8 @@
   },
   "projectFileDependencyGroups": {
     "net5.0-windows7.0": [
-      "Calculator.BusinessLogic >= 1.0.0"
+      "Calculator.BusinessLogic >= 1.0.0",
+      "SimpleInjector >= 5.3.2"
     ]
   },
   "packageFolders": {
@@ -5783,6 +5820,12 @@
     "frameworks": {
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "SimpleInjector": {
+            "target": "Package",
+            "version": "[5.3.2, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

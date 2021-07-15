@@ -114,3 +114,4 @@ E:\Artyom\Studing\TMS\Calculator\Calculator.Presentation\obj\Debug\net5.0-window
 E:\Artyom\Studing\TMS\Calculator\Calculator.Presentation\obj\Debug\net5.0-windows\ref\Calculator.Presentation.dll
 E:\Artyom\Studing\TMS\Calculator\Calculator.Presentation\obj\Debug\net5.0-windows\Calculator.Presentation.pdb
 E:\Artyom\Studing\TMS\Calculator\Calculator.Presentation\obj\Debug\net5.0-windows\Calculator.Presentation.genruntimeconfig.cache
+E:\Artyom\Studing\TMS\Calculator\Calculator.Presentation\bin\Debug\net5.0-windows\SimpleInjector.dll

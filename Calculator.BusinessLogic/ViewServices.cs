@@ -7,7 +7,7 @@ using Calculator.DataAccess;
 
 namespace Calculator.BusinessLogic
 {
-    public class ViewServices
+    public class ViewServices : IBusinessLogic
     {
         private const string ZeroWithPoint = "0,";
         private const string Point = ",";
@@ -16,7 +16,7 @@ namespace Calculator.BusinessLogic
 
         public Operations CurrentOperation { get; set; }
         private CalculatorServices _calculator;
-        private DataWorker _data;
+        private IDataAccess _data;
         private readonly string[] _oper = { "+", "-", "*", "/", "%" };
 
         public ViewServices()

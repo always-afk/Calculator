@@ -27,7 +27,8 @@ namespace Calculator.Presentation
 
         private const int MaxLenght = 10;
 
-        private ViewServices _view;
+        private IBusinessLogic _view;
+        
 
         public StartupForm()
         {
