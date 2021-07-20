@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator.DataAccess
 {
-    public interface IDataAccess
+    public interface IDataWorker
     {
         public void Save(List<string> notes);
         public List<string> Load();

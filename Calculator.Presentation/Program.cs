@@ -16,11 +16,6 @@ namespace Calculator.Presentation
         static Program()
         {
             _container = new Container();
-
-            _container.Register<IBusinessLogic, ViewServices>();
-            _container.Register<IDataAccess, DataWorker>();
-
-            _container.Verify();
         }
         /// <summary>
         ///  The main entry point for the application.
@@ -31,7 +26,18 @@ namespace Calculator.Presentation
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartupForm());
+            Registration();
+            Application.Run(_container.GetInstance<StartupForm>());
+        }
+
+        static void Registration()
+        {
+            _container.Register<IViewServices, ViewServices>(Lifestyle.Singleton);
+            _container.Register<ICalculatorServices, CalculatorServices>(Lifestyle.Singleton);
+            _container.Register<IDataWorker, DataWorker>(Lifestyle.Singleton);
+            _container.Register<StartupForm>(Lifestyle.Singleton);
+
+            _container.Verify();
         }
     }
 }

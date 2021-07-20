@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator.DataAccess
 {
-    public class DataWorker : IDataAccess
+    public class DataWorker : IDataWorker
     {
         public DataWorker()
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator.BusinessLogic
 {
-    public interface IBusinessLogic
+    public interface IViewServices
     {
         public Operations CurrentOperation { get; set; }
 

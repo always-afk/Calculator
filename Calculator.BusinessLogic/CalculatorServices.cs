@@ -2,7 +2,7 @@
 
 namespace Calculator.BusinessLogic
 {
-    public class CalculatorServices
+    public class CalculatorServices : ICalculatorServices
     {
         public CalculatorServices() { }
 

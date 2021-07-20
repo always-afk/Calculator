@@ -27,13 +27,13 @@ namespace Calculator.Presentation
 
         private const int MaxLenght = 10;
 
-        private IBusinessLogic _view;
+        private IViewServices _view;
         
 
-        public StartupForm()
+        public StartupForm(IViewServices logic)
         {
             InitializeComponent();
-            _view = new ViewServices();
+            _view = logic;
         }
 
         private void Button_0_Click(object sender, EventArgs e) => textBox_Current.Text += Zero;
