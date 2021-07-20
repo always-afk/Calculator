@@ -34,7 +34,7 @@ namespace Calculator.Presentation
         {
             _container.Register<IViewServices, ViewServices>(Lifestyle.Singleton);
             _container.Register<ICalculatorServices, CalculatorServices>(Lifestyle.Singleton);
-            _container.Register<IDataWorker, DataWorker>(Lifestyle.Singleton);
+            _container.Register<IDataService, DataService>(Lifestyle.Singleton);
             _container.Register<StartupForm>(Lifestyle.Singleton);
 
             _container.Verify();
