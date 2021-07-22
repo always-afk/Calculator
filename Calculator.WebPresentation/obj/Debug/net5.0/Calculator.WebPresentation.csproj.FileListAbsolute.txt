@@ -355,3 +355,4 @@ E:\Artyom\Studing\TMS\Calculator\Calculator.WebPresentation\obj\Debug\net5.0\Cal
 E:\Artyom\Studing\TMS\Calculator\Calculator.WebPresentation\obj\Debug\net5.0\ref\Calculator.WebPresentation.dll
 E:\Artyom\Studing\TMS\Calculator\Calculator.WebPresentation\obj\Debug\net5.0\Calculator.WebPresentation.pdb
 E:\Artyom\Studing\TMS\Calculator\Calculator.WebPresentation\obj\Debug\net5.0\Calculator.WebPresentation.genruntimeconfig.cache
+E:\Artyom\Studing\TMS\Calculator\Calculator.WebPresentation\obj\Debug\net5.0\Razor\Views\Home\CalculatorPage.cshtml.g.cs

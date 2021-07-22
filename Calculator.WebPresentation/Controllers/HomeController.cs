@@ -28,6 +28,25 @@ namespace Calculator.WebPresentation.Controllers
             return View();
         }
 
+        public IActionResult CalculatorPage(string arg1, string arg2, string math)
+        {
+            double a = 0;
+            double b = 0;
+            string res = "";
+
+            if(double.TryParse(arg1, out a) && double.TryParse(arg2, out b))
+            {
+                res += a + b;
+            }
+
+            return View(model: res);
+        }
+
+        public IActionResult Calculate(string arg1, string arg2, string math)
+        {
+            return View("CalculatorPage", model: 100);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
