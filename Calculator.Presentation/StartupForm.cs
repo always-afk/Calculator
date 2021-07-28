@@ -162,7 +162,12 @@ namespace Calculator.Presentation
 
         private void Button_Result_Click(object sender, EventArgs e)
         {
-            listBox_Results.Items.Add(_view.FindRes(textBox_Current.Text, textBox_Previous.Text));
+            double num1, num2;
+            if(Double.TryParse(textBox_Previous.Text, out num1) && Double.TryParse(textBox_Current.Text, out num2))
+            {
+                listBox_Results.Items.Add(_view.FindRes(textBox_Current.Text, textBox_Previous.Text, textBox_Operation.Text));
+            }
+            
             Button_RemoveAll_Click(sender, e);
         }
 

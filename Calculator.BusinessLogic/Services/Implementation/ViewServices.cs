@@ -40,43 +40,63 @@ namespace Calculator.BusinessLogic
             return res;
         }
 
-        public string FindRes(string num1, string num2)
+        private void ConvertOperation(string operation)
         {
-            if (!String.IsNullOrEmpty(num1) && !String.IsNullOrEmpty(num2))
+            if(operation == "+")
             {
-                var fnum = Convert.ToDouble(num2);
-                var snum = Convert.ToDouble(num1);
-                var calcRes = 0.0;
-                var oper = "";
-
-                switch (CurrentOperation)
-                {
-                    case Operations.Add:
-                        calcRes = _calculator.Add(fnum, snum);
-                        oper = _oper[0];
-                        break;
-                    case Operations.Substract:
-                        calcRes = _calculator.Subtract(fnum, snum);
-                        oper = _oper[1];
-                        break;
-                    case Operations.Multiply:
-                        calcRes = _calculator.Multiply(fnum, snum);
-                        oper = _oper[2];
-                        break;
-                    case Operations.Split:
-                        calcRes = _calculator.Split(fnum, snum);
-                        oper = _oper[3];
-                        break;
-                    case Operations.Percent:
-                        calcRes = _calculator.Percent(fnum, snum);
-                        oper = _oper[4];
-                        break;
-                }
-
-                return $"{fnum} {oper} {snum} = {calcRes}";
-
+                CurrentOperation = Operations.Add;
             }
-            return null;
+            else if(operation == "-")
+            {
+                CurrentOperation = Operations.Substract;
+            }
+            else if(operation == "*")
+            {
+                CurrentOperation = Operations.Multiply;
+            }
+            else if(operation == "/")
+            {
+                CurrentOperation = Operations.Split;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid operation", operation);
+            }
+        }
+
+        public string FindRes(double fnum, double snum, string operation)
+        {
+            ConvertOperation(operation);
+            
+                
+            var calcRes = 0.0;
+            var oper = "";
+
+            switch (CurrentOperation)
+            {
+                case Operations.Add:
+                    calcRes = _calculator.Add(fnum, snum);
+                    oper = _oper[0];
+                    break;
+                case Operations.Substract:
+                    calcRes = _calculator.Subtract(fnum, snum);
+                    oper = _oper[1];
+                    break;
+                case Operations.Multiply:
+                    calcRes = _calculator.Multiply(fnum, snum);
+                    oper = _oper[2];
+                    break;
+                case Operations.Split:
+                    calcRes = _calculator.Split(fnum, snum);
+                    oper = _oper[3];
+                    break;
+                case Operations.Percent:
+                    calcRes = _calculator.Percent(fnum, snum);
+                    oper = _oper[4];
+                    break;
+            }
+
+            return $"{fnum} {oper} {snum} = {calcRes}";
         }
 
         public void Save(List<string> notes)

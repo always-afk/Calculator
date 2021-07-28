@@ -10,7 +10,7 @@ namespace Calculator.BusinessLogic
     {
         public Operations CurrentOperation { get; set; }
 
-        public string FindRes(string num1, string num2);
+        public string FindRes(double num1, double num2, string operation);
         public string PointLogic(string msg);
         public void Save(List<string> notes);
         public List<string> Load();

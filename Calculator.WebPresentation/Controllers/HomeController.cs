@@ -6,16 +6,19 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Calculator.BusinessLogic;
 
 namespace Calculator.WebPresentation.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IViewServices _viewServices;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IViewServices viewServices)
         {
             _logger = logger;
+            _viewServices = viewServices;
         }
 
         public IActionResult Index()
@@ -28,16 +31,16 @@ namespace Calculator.WebPresentation.Controllers
             return View();
         }
 
-        public IActionResult CalculatorPage(string arg1, string arg2, string math)
+        public IActionResult CalculatorPage(string fnum, string snum, string operation)
         {
-            double a = 0;
-            double b = 0;
             string res = "";
-
-            if(double.TryParse(arg1, out a) && double.TryParse(arg2, out b))
+            double num1;
+            double num2;
+            if(Double.TryParse(fnum, out num1) && Double.TryParse(snum, out num2) && !String.IsNullOrEmpty(operation))
             {
-                res += a + b;
+                res += _viewServices.FindRes(num1, num2, operation);
             }
+           
 
             return View(model: res);
         }

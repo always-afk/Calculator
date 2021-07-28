@@ -1,31 +1,16 @@
 ﻿@{
-    ViewBag.Title = "CalculatorPage";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Calculator Page";
 }
-<table>
-    <tr>
-        <td>
-            <input type="text" id="arg1" name="arg1" />
-        </td>
-        <td>
-            <select name="math">
-                <option></option>
-                <option>+</option>
-                <option>-</option>
-                <option>*</option>
-                <option>/</option>
-            </select>
-        </td>
-        <td>
-            <input type="text" id="arg2" name="arg2" />
-        </td>
-        <td>
-            <button style="text-align: center" asp-area="" asp-controller="Home" asp-action="CalculatorPage">
-                =
-            </button>
-        </td>
-        <td>
-            <span>@Model</span>
-        </td>
-    </tr>
-</table>
+<div>My calculator</div>
+<form method="post" asp-controller="Home" asp-action="CalculatorPage">
+    <input id="fnum" name="fnum" />
+    <select id="operation" name="operation">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input id="snum" name="snum" />
+    <input type="submit" value="Result" />
+    <label>@Model</label>
+</form>
