@@ -43,8 +43,7 @@ namespace Calculator.WebPresentation.Controllers
                 res += _viewServices.FindRes(num1, num2, operation);
                 _result.Add(res);
                 _viewServices.Save(_result);
-            }
-           
+            }          
 
             return View(model: _result);
         }

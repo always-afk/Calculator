@@ -13,10 +13,9 @@
     <input id="snum" name="snum" />
     <input type="submit" value="Result" />    
 </form>
-
-    @{ 
-        foreach (string e in Model)
-        {
-            <li>@e</li>
-        }
-     }
+@{ 
+    foreach (string e in Model)
+    {
+        <li>@e</li>
+    }
+}

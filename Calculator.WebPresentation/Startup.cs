@@ -10,14 +10,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Calculator.BusinessLogic;
 using Calculator.DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 namespace Calculator.WebPresentation
 {
     public class Startup
     {
+        private IConfigurationRoot _confStr;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            _confStr = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -27,9 +31,10 @@ namespace Calculator.WebPresentation
         {
             
             services.AddControllersWithViews();
-            services.AddTransient<IDataService, DataService>();
-            services.AddTransient<ICalculatorServices, CalculatorServices>();
-            services.AddTransient<IViewServices, ViewServices>();
+            services.AddDbContext<DataAccess.AppContext>(options => options.UseSqlServer(_confStr.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IDataService, DataService>();
+            services.AddScoped<ICalculatorServices, CalculatorServices>();
+            services.AddScoped<IViewServices, ViewServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

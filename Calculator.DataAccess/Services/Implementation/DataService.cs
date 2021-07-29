@@ -8,42 +8,41 @@ namespace Calculator.DataAccess
 {
     public class DataService : IDataService
     {
-        public DataService()
+        private readonly AppContext _context;
+
+        public DataService(AppContext appContext)
         {
-           
+            _context = appContext;
         }
 
         public void Save(List<string> notes)
-        {
-            using (AppContext db = new AppContext())
+        {            
+            List<Note> notesList = new List<Note>();
+            foreach(var e in notes)
             {
-                List<Note> notesList = new List<Note>();
-                foreach(var e in notes)
-                {
-                    Note note = ConvertToNote(e);
-                    notesList.Add(note);
-                }
-                foreach(var elem in notesList)
-                {
-                    if (db.Notes.Where(c => c.FirstNum == elem.FirstNum && c.SecondNum == elem.SecondNum && c.Operation == elem.Operation && c.Result == elem.Result) is null)
-                    {
-                        db.Notes.Add(elem);
-                    }                    
-                }
-                db.SaveChanges();
+                Note note = ConvertToNote(e);
+                notesList.Add(note);
             }
+            foreach(var elem in notesList)
+            {
+                if (!_context.Notes.Any(c => c.FirstNum == elem.FirstNum && c.SecondNum == elem.SecondNum && c.Operation == elem.Operation))
+                {
+                    _context.Notes.Add(elem);
+                }                    
+            }
+            _context.SaveChanges();
+            
         }
 
         public List<string> Load()
         {
             List<string> res = new List<string>();
-            using (AppContext db = new AppContext())
+            
+            foreach(var e in _context.Notes)
             {
-                foreach(var e in db.Notes)
-                {
-                    res.Add($"{e.FirstNum} {e.Operation} {e.SecondNum} = {e.Result}");
-                }
+                res.Add($"{e.FirstNum} {e.Operation} {e.SecondNum} = {e.Result}");
             }
+            
             return res;
         }
 
