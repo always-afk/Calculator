@@ -11,6 +11,12 @@
         <option>/</option>
     </select>
     <input id="snum" name="snum" />
-    <input type="submit" value="Result" />
-    <label>@Model</label>
+    <input type="submit" value="Result" />    
 </form>
+
+    @{ 
+        foreach (string e in Model)
+        {
+            <li>@e</li>
+        }
+     }

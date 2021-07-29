@@ -14,11 +14,13 @@ namespace Calculator.WebPresentation.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IViewServices _viewServices;
+        private readonly List<string> _result;
 
         public HomeController(ILogger<HomeController> logger, IViewServices viewServices)
         {
             _logger = logger;
             _viewServices = viewServices;
+            _result = _viewServices.Load();
         }
 
         public IActionResult Index()
@@ -39,10 +41,12 @@ namespace Calculator.WebPresentation.Controllers
             if(Double.TryParse(fnum, out num1) && Double.TryParse(snum, out num2) && !String.IsNullOrEmpty(operation))
             {
                 res += _viewServices.FindRes(num1, num2, operation);
+                _result.Add(res);
+                _viewServices.Save(_result);
             }
            
 
-            return View(model: res);
+            return View(model: _result);
         }
 
         public IActionResult Calculate(string arg1, string arg2, string math)
