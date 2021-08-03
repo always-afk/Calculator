@@ -48,11 +48,6 @@ namespace Calculator.WebPresentation.Controllers
             return View(model: _result);
         }
 
-        public IActionResult Calculate(string arg1, string arg2, string math)
-        {
-            return View("CalculatorPage", model: 100);
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

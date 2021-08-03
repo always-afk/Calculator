@@ -2,20 +2,21 @@
     ViewData["Title"] = "Calculator Page";
 }
 <div>My calculator</div>
-<form method="post" asp-controller="Home" asp-action="CalculatorPage">
-    <input id="fnum" name="fnum" />
+<form name="ClientIn" method="post" asp-controller="Home" asp-action="CalculatorPage">
+    <input type="number" step="0.001" min="-99999" max="99999" id="fnum" name="fnum" placeholder="First number"/>
     <select id="operation" name="operation">
         <option>+</option>
         <option>-</option>
         <option>*</option>
         <option>/</option>
     </select>
-    <input id="snum" name="snum" />
+    <input type="number" step="0.001" min="-99999" max="99999" id="snum" name="snum" placeholder="Second number" />
     <input type="submit" value="Result" />    
 </form>
 @{ 
     foreach (string e in Model)
     {
-        <li>@e</li>
+        <li onclick="HistoryClick(this)">@e</li>
     }
 }
+<script src="~/js/CalcClient.js"></script>

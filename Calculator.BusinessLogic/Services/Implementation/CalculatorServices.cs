@@ -23,6 +23,10 @@ namespace Calculator.BusinessLogic
 
         public double Split(double fnum, double snum)
         {
+            if (snum == 0)
+            {
+                return 0;
+            }
             return fnum / snum;
         }
 
